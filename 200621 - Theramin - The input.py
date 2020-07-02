@@ -1,4 +1,3 @@
-# Write your code here :-)
 from gpiozero import DistanceSensor
 from time import sleep
 
@@ -12,9 +11,12 @@ sender = udp_client.SimpleUDPClient('127.0.0.1', 4559)
 
 while True:
     print (sensor1.distance)
-    print (sensor2.distance)
     pitch = round(sensor1.distance * 100 +30)
-    sender.send_message('/play_this', pitch)
+    sender.send_message('/play_this_pitch', pitch)
+    sleep(0.06)
+    print (sensor2.distance)
+    volume = round(sensor2.distance * 100 +30)
+    sender.send_message('/play_this_volume', volume)
     sleep(0.06)
 
 #Okay so both sensors work, providing a distance reading. Good. However, the results all display in the one stream.
