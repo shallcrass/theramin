@@ -16,3 +16,6 @@ while True:
     pitch = round(sensor1.distance * 100 +30)
     sender.send_message('/play_this', pitch)
     sleep(0.06)
+
+#Okay so both sensors work, providing a distance reading. Good. However, the results all display in the one stream.
+#I think 2 streams are required... unless I get the recieved to read every other line of the stream... thoughts?
