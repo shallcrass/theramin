@@ -2,7 +2,8 @@
 
 live_loop :listen do
   use_real_time
-  note = sync "/osc/play_this"
+  note = sync "/osc/play_this_pitch"
   play note[0]
+  volume = sync "/osc/play_this_volume"
+  play volume[0]
 end
-
